@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+version="2.1">
+	<persistence-unit name="EmployeePersistenceUnit"
+		transaction-type="RESOURCE_LOCAL">
+		
+		<!-- 
+		<class>_01.hello.eclipselink.model.Employee</class>
+		<class>_02.field.access.model.Employee2</class>
+		<class>_03.property.access.model.Employee3</class>
+		<class>_04.mixed.access.model.Employee4</class>
+		<class>_05.mapping.table.model.Employee5</class>
+		<class>_06.mapping.column.model.Employee6</class>
+		<class>_07.mapping.enumerated.model.Employee7</class>
+		<class>_08.mapping.temporal.model.Employee8</class>
+		<class>_09.mapping.lob.model.Employee9</class>
+		<class>_10.idgeneration.auto.model.Employee10</class>
+		<class>_11.idgeneration.table.model.Employee11</class>
+		<class>_12.idgeneration.sequence.model.Employee12</class>
+		<class>_13.idgeneration.identity.model.Employee13</class>		
+		<class>_14.manyToOne.uni.model.Employee14</class>
+		<class>_14.manyToOne.uni.model.Department</class>
+		<class>_15.oneToOne.uni.model.Employee15</class>
+		<class>_15.oneToOne.uni.model.ParkingSpace</class>
+		<class>_16.oneToOne.bi.model.Employee16</class>
+		<class>_16.oneToOne.bi.model.ParkingSpace2</class>
+		<class>_17.oneToMany.bi.model.Employee17</class>
+		<class>_17.oneToMany.bi.model.Department2</class>				
+		<class>_18.oneToMany.uni.model.Employee18</class>
+		<class>_18.oneToMany.uni.model.Phone</class>
+		<class>_19.manyToMany.uni.model.Employee19</class>
+		<class>_19.manyToMany.uni.model.Project</class>	
+		<class>_20.manyToMany.bi.model.Employee20</class>
+		<class>_20.manyToMany.bi.model.Project2</class>	
+		<class>_21.embedded.objects.model.Employee21</class>			 
+		<class>_22.elementCollection.model.Employee22</class>
+		<class>_23.elementCollectionStringMap.model.Employee23</class>
+		<class>_24.elementCollectionEnumMap.model.Employee24</class>
+		<class>_25.elementCollectionEmbeddableMap.model.Employee25</class>
+		<class>_26.oneToManyMap.model.Employee26</class>
+		<class>_26.oneToManyMap.model.Department3</class>
+		<class>_27.query.model.Employee27</class>
+		<class>_28.query.model.Employee28</class>
+		<class>_29.jpql.model.Employee29</class>
+		<class>_29.jpql.model.Department4</class>
+		<class>_30.jpql.model.Employee30</class>
+		<class>_30.jpql.model.Department5</class>
+		<class>_30.jpql.model.Address2</class>
+		<class>_30.jpql.model.Project3</class>
+		<class>_30.jpql.model.Phone2</class>		
+	-->	
+	
+		<class>_31.criteria.model.Employee31</class>
+		<class>_31.criteria.model.Department6</class>
+		<class>_31.criteria.model.Address3</class>
+		<class>_31.criteria.model.Project4</class>
+		<class>_31.criteria.model.Phone3</class>
+
+		<properties>
+		
+		<!-- 			
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa.schema" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="" />
+		-->					
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1520:xe" />
+			<property name="javax.persistence.jdbc.user" value="Levent" />
+			<property name="javax.persistence.jdbc.password" value="123456" />
+				
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+			<property name="eclipselink.logging.level" value="OFF" />
+				
+		</properties>
+		
+	</persistence-unit>
+	
+	<persistence-unit name="EmployeePersistenceUnitForHibernate"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>	
+							
+     		<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa.schema" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="" />											
+				 
+		 <!-- javax.persistence.jdbc... property'lerini Hibernate icin de problemsiz sekilde kulanabiliriz. -->
+		 	
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.hbm2ddl.auto" value="create"/>
+			<property name="hibernate.id.new_generator_mappings" value="true"/>	
+					
+			<!-- 
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver" />
+			<property name="hibernate.connection.url" value="jdbc:oracle:thin:@localhost:1520:xe" />
+			<property name="hibernate.connection.username" value="Levent" />
+			<property name="hibernate.connection.password" value="123456" />
+			-->				
+				
+		</properties>		
+	</persistence-unit>
+</persistence>
