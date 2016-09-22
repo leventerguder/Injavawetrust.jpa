@@ -7,6 +7,8 @@ version="2.1">
 	<persistence-unit name="EmployeePersistenceUnit"
 		transaction-type="RESOURCE_LOCAL">
 		
+		<class>_01.hello.eclipselink.model.Employee</class>
+		
 		<!-- 
 		<class>_01.hello.eclipselink.model.Employee</class>
 		<class>_02.field.access.model.Employee2</class>
@@ -50,7 +52,12 @@ version="2.1">
 		<class>_30.jpql.model.Department5</class>
 		<class>_30.jpql.model.Address2</class>
 		<class>_30.jpql.model.Project3</class>
-		<class>_30.jpql.model.Phone2</class>		
+		<class>_30.jpql.model.Phone2</class>	
+		<class>_31.criteria.model.Employee31</class>
+		<class>_31.criteria.model.Department6</class>
+		<class>_31.criteria.model.Address3</class>
+		<class>_31.criteria.model.Project4</class>
+		<class>_31.criteria.model.Phone3</class>	
 	-->	
 	
 		<class>_31.criteria.model.Employee31</class>
@@ -58,15 +65,18 @@ version="2.1">
 		<class>_31.criteria.model.Address3</class>
 		<class>_31.criteria.model.Project4</class>
 		<class>_31.criteria.model.Phone3</class>
+	
+
 
 		<properties>
 		
-		<!-- 			
+				
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa.schema" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa.schema?serverTimezone=UTC" />
 			<property name="javax.persistence.jdbc.user" value="root" />
 			<property name="javax.persistence.jdbc.password" value="" />
-		-->					
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+		<!-- 					
 			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1520:xe" />
 			<property name="javax.persistence.jdbc.user" value="Levent" />
@@ -74,7 +84,7 @@ version="2.1">
 				
 			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
 			<property name="eclipselink.logging.level" value="OFF" />
-				
+		-->		
 		</properties>
 		
 	</persistence-unit>

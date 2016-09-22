@@ -2,29 +2,19 @@ package _01.hello.eclipselink.test;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-
+import _01.hello.eclipselink.dao.EmployeeDAO;
+import _01.hello.eclipselink.dao.EmployeeDAOImpl;
 import _01.hello.eclipselink.model.Employee;
-import _01.hello.eclipselink.service.EmployeeService;
-import _01.hello.eclipselink.service.EmployeeServiceImpl;
 
 public class EmployeeTest {
 
 	public static void main(String[] args) {
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("EmployeePersistenceUnit");
-		EntityManager entityManager = entityManagerFactory.createEntityManager();
-		EntityTransaction entityTransaction = entityManager.getTransaction();
 
-		EmployeeService employeeService = new EmployeeServiceImpl(entityManager);
+		EmployeeDAO employeeService = new EmployeeDAOImpl();
 
-		entityTransaction.begin();
-		Employee employee = employeeService.createEmployee(1, "Levent", "Erguder", 1000);
-		Employee employee2 = employeeService.createEmployee(2, "James", "Gosling", 10000);
-		Employee employee3 = employeeService.createEmployee(3, "Joshua", "Bloch", 10000);
-		entityTransaction.commit();
+		Employee employee = employeeService.insertEmployee(1, "Levent", "Erguder", 1000);
+		Employee employee2 = employeeService.insertEmployee(2, "James", "Gosling", 10000);
+		Employee employee3 = employeeService.insertEmployee(3, "Joshua", "Bloch", 10000);
 
 		System.out.println("Persisted :" + employee);
 		System.out.println("Persisted :" + employee2);
@@ -33,14 +23,12 @@ public class EmployeeTest {
 		Employee employee4 = employeeService.findEmployee(1);
 		System.out.println("Found : " + employee4);
 
-		entityTransaction.begin();
 		Employee employee5 = employeeService.raiseEmployeeSalary(1, 1000);
-		entityTransaction.commit();
+
 		System.out.println("Updated : " + employee5);
 
-		entityTransaction.begin();
 		employeeService.removeEmployee(1);
-		entityTransaction.commit();
+
 		System.out.println("Removed Employee id:" + 1);
 
 		System.out.println("findAllEmployees");
@@ -48,9 +36,6 @@ public class EmployeeTest {
 		for (Employee emp : employees) {
 			System.out.println("Found : " + emp);
 		}
-
-		entityManager.close();
-		entityManagerFactory.close();
 
 	}
 }
