@@ -17,7 +17,7 @@ public class Employee6 {
 	@Column(name = "wage")
 	private int salary;
 
-	Employee6() {
+	public Employee6() {
 		super();
 	}
 
