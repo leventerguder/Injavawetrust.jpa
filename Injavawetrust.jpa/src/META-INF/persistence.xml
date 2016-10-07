@@ -7,7 +7,7 @@ version="2.1">
 	<persistence-unit name="EmployeePersistenceUnit"
 		transaction-type="RESOURCE_LOCAL">
 				
-		<class>_07.mapping.enumerated.model.Employee7</class>
+		<class>_10.idgeneration.auto.model.Employee10</class>
 		<!-- 
 		<class>_01.hello.eclipselink.model.Employee</class>
 		<class>_02.field.access.model.Employee2</class>

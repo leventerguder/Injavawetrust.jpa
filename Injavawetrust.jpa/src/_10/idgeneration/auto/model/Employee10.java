@@ -15,7 +15,7 @@ public class Employee10 {
 	private String surname;
 	private int salary;
 
-	Employee10() {
+	public Employee10() {
 		super();
 	}
 
