@@ -5,9 +5,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import _09.mapping.lob.dao.EmployeeDAO;
+import _09.mapping.lob.dao.EmployeeDAOImpl;
 import _09.mapping.lob.model.Employee9;
-import _09.mapping.lob.service.EmployeeService;
-import _09.mapping.lob.service.EmployeeServiceImpl;
 
 public class EmployeeTest {
 
@@ -16,7 +16,7 @@ public class EmployeeTest {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 
-		EmployeeService employeeService = new EmployeeServiceImpl(entityManager);
+		EmployeeDAO employeeService = new EmployeeDAOImpl(entityManager);
 
 		byte[] picture = { 1, 5, 6, 7, 2, 5, 10, 22, 40, 50 };
 		// picture byte , sample

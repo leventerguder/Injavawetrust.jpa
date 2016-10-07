@@ -17,7 +17,7 @@ public class Employee9 {
 	@Lob
 	private byte[] picture;
 
-	Employee9() {
+	public Employee9() {
 		super();
 	}
 

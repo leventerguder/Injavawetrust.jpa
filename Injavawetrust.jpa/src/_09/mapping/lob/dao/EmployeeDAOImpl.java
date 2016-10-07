@@ -1,14 +1,14 @@
-package _09.mapping.lob.service;
+package _09.mapping.lob.dao;
 
 import javax.persistence.EntityManager;
 
 import _09.mapping.lob.model.Employee9;
 
-public class EmployeeServiceImpl implements EmployeeService {
+public class EmployeeDAOImpl implements EmployeeDAO {
 
 	private EntityManager entityManager;
 
-	public EmployeeServiceImpl(EntityManager entityManager) {
+	public EmployeeDAOImpl(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
 
