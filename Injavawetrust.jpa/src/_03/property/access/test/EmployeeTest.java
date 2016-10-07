@@ -5,9 +5,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import _03.property.access.dao.EmployeeDAO;
+import _03.property.access.dao.EmployeeDAOImpl;
 import _03.property.access.model.Employee3;
-import _03.property.access.service.EmployeeService;
-import _03.property.access.service.EmployeeServiceImpl;
 
 public class EmployeeTest {
 
@@ -16,12 +16,12 @@ public class EmployeeTest {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 
-		EmployeeService employeeService = new EmployeeServiceImpl(entityManager);
+		EmployeeDAO employeeService = new EmployeeDAOImpl(entityManager);
 
 		entityTransaction.begin();
-		Employee3 employee = employeeService.createEmployee(1, "Levent", "Erguder", 1000);
-		Employee3 Employee3 = employeeService.createEmployee(2, "James", "Gosling", 10000);
-		Employee3 employee3 = employeeService.createEmployee(3, "Joshua", "Bloch", 10000);
+		Employee3 employee = employeeService.insertEmployee(1, "Levent", "Erguder", 1000);
+		Employee3 Employee3 = employeeService.insertEmployee(2, "James", "Gosling", 10000);
+		Employee3 employee3 = employeeService.insertEmployee(3, "Joshua", "Bloch", 10000);
 		entityTransaction.commit();
 
 		System.out.println("Persisted :" + employee);

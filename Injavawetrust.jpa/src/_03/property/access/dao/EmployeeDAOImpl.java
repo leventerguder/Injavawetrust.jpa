@@ -1,18 +1,18 @@
-package _03.property.access.service;
+package _03.property.access.dao;
 
 import javax.persistence.EntityManager;
 import _03.property.access.model.Employee3;
 
-public class EmployeeServiceImpl implements EmployeeService {
+public class EmployeeDAOImpl implements EmployeeDAO {
 
 	private EntityManager entityManager;
 
-	public EmployeeServiceImpl(EntityManager entityManager) {
+	public EmployeeDAOImpl(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
 
 	@Override
-	public Employee3 createEmployee(int id, String name, String surname, int salary) {
+	public Employee3 insertEmployee(int id, String name, String surname, int salary) {
 		Employee3 employee = new Employee3(id, name, surname, salary);
 		entityManager.persist(employee);
 		return employee;
