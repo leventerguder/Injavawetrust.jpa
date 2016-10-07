@@ -5,9 +5,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import _13.idgeneration.identity.dao.EmployeeDAO;
+import _13.idgeneration.identity.dao.EmployeDAOImpl;
 import _13.idgeneration.identity.model.Employee13;
-import _13.idgeneration.identity.service.EmployeeService;
-import _13.idgeneration.identity.service.EmployeeServiceImpl;
 
 public class EmployeeTest {
 
@@ -17,7 +17,7 @@ public class EmployeeTest {
 	EntityManager entityManager = entityManagerFactory.createEntityManager();
 	EntityTransaction entityTransaction = entityManager.getTransaction();
 
-	EmployeeService employeeService = new EmployeeServiceImpl(entityManager);
+	EmployeeDAO employeeService = new EmployeDAOImpl(entityManager);
 
 	entityTransaction.begin();
 	Employee13 employee = employeeService.createEmployee("Levent", "Erguder", 1000);

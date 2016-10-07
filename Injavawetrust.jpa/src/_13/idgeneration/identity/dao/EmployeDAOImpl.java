@@ -1,14 +1,14 @@
-package _13.idgeneration.identity.service;
+package _13.idgeneration.identity.dao;
 
 import javax.persistence.EntityManager;
 
 import _13.idgeneration.identity.model.Employee13;
 
-public class EmployeeServiceImpl implements EmployeeService {
+public class EmployeDAOImpl implements EmployeeDAO {
 
     private EntityManager entityManager;
 
-    public EmployeeServiceImpl(EntityManager entityManager) {
+    public EmployeDAOImpl(EntityManager entityManager) {
 	this.entityManager = entityManager;
     }
 

@@ -8,14 +8,14 @@ import javax.persistence.Id;
 @Entity
 public class Employee13 {
 
-    	@Id
-    	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String surname;
 	private int salary;
 
-	Employee13() {
+	public Employee13() {
 		super();
 	}
 
