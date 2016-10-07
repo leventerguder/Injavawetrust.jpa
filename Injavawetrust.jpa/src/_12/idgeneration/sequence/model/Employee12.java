@@ -12,14 +12,14 @@ public class Employee12 {
 //	@Id
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	
-	@SequenceGenerator(name="Emp_Gen", sequenceName="EMP_SEQUENCE", initialValue=20, allocationSize=30)
-	@Id @GeneratedValue(generator="Emp_Gen" , strategy= GenerationType.SEQUENCE)
+	@SequenceGenerator(name="Emp_Seq_Gen", sequenceName="EMP_SEQUENCE", initialValue=20, allocationSize=30)
+	@Id @GeneratedValue(generator="Emp_Seq_Gen" , strategy= GenerationType.SEQUENCE)
 	private int id;
 	private String name;
 	private String surname;
 	private int salary;
 
-	Employee12() {
+	public Employee12() {
 		super();
 	}
 
