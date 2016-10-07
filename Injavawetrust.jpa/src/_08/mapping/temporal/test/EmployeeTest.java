@@ -8,9 +8,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import _08.mapping.temporal.dao.EmployeeDAO;
+import _08.mapping.temporal.dao.EmployeeDAOImpl;
 import _08.mapping.temporal.model.Employee8;
-import _08.mapping.temporal.service.EmployeeService;
-import _08.mapping.temporal.service.EmployeeServiceImpl;
 
 public class EmployeeTest {
 
@@ -20,7 +20,7 @@ public class EmployeeTest {
 	EntityManager entityManager = entityManagerFactory.createEntityManager();
 	EntityTransaction entityTransaction = entityManager.getTransaction();
 
-	EmployeeService employeeService = new EmployeeServiceImpl(entityManager);
+	EmployeeDAO employeeService = new EmployeeDAOImpl(entityManager);
 
 	entityTransaction.begin();
 
@@ -35,11 +35,11 @@ public class EmployeeTest {
 	Calendar birthCalendar3 = prepareCalendarAndDate(1961, 7, 28);
 	Date startDate3 = prepareCalendarAndDate(2004, 6, 1).getTime();
 
-	Employee8 employee = employeeService.createEmployee(1, "Levent", "Erguder", 1000,
+	Employee8 employee = employeeService.insertEmployee(1, "Levent", "Erguder", 1000,
 		startDate, birthCalendar);
-	Employee8 employee2 = employeeService.createEmployee(2, "James", "Gosling", 10000,
+	Employee8 employee2 = employeeService.insertEmployee(2, "James", "Gosling", 10000,
 		startDate2, birthCalendar2);
-	Employee8 employee3 = employeeService.createEmployee(3, "Joshua", "Bloch", 10000,
+	Employee8 employee3 = employeeService.insertEmployee(3, "Joshua", "Bloch", 10000,
 		startDate3, birthCalendar3);
 	entityTransaction.commit();
 
@@ -58,6 +58,6 @@ public class EmployeeTest {
 	calendar.set(Calendar.MONTH, month);// Not : Ocak/June --> 0 dan baslar.
 	calendar.set(Calendar.DAY_OF_MONTH, day);
 
-	return calendar;
-    }
+		return calendar;
+	}
 }

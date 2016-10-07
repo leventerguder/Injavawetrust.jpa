@@ -24,7 +24,7 @@ public class Employee8 {
 	// year month day hour minute second
 	private Calendar birthDay;
 
-	Employee8() {
+	public Employee8() {
 		super();
 	}
 
