@@ -20,7 +20,7 @@ public class Employee7 {
 	// index 0 dan baslar!
 	private EmployeeType employeeType;
 
-	Employee7() {
+	public Employee7() {
 		super();
 	}
 
